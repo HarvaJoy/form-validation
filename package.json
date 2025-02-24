@@ -13,7 +13,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d ./public/build.js",
+    "deploy": "gh-pages -d ./public/bundle.js",
     "server": "live-server public/",
     "build": "webpack",
     "dev-server": "webpack-dev-server"
