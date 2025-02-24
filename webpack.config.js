@@ -2,7 +2,6 @@ const path = require('path');
 
 // entry -> output
 
-
 module.exports = {
     entry: './src/app.js',
     output: {
@@ -31,9 +30,14 @@ module.exports = {
             ],
         }]
     },
-    devtool: 'cheap-module-eval-source-map',
+    mode: 'development',
+    devtool: "inline-source-map",
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        historyApiFallback: true
+        static: {
+            directory: path.join(__dirname, "public")
+        },
+        // contentBase: path.join(__dirname, 'public'),
+        // historyApiFallback: true
     }
+    
 };

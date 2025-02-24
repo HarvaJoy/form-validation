@@ -1,10 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link  } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link  } from 'react-router-dom';
 import Header from '../components/Header';
-import HomePage from '../components/HomePage';
 import Footer from '../components/Footer';
-
-import NotFoundPage from '../components/NotFoundPage';
+import Home from "../components/Home";
+import About from "../components/about";
+import Blog from "../components/blog";
+import Hiring from "../components/Hiring";
+import Contact from "../components/Contact";
+import NoPage from '../components/NotPage';
 
 
 const AppRouter = () => {
@@ -22,34 +25,6 @@ const stylePages = {
 }  
  
 
-//pages Our Company
-const AboutUs = () => (
-        <div style={stylePages}>
-            <p> This is from my component About Us Page</p>
-            <Link to="/">Go home</Link>
-        </div>
-);
-
-const BlogPage = () => (
-    <div style={stylePages}>
-        <p>Blog Page</p>
-        <Link to="/">Go home</Link>
-    </div>
-);
-
-const Contact = () => (
-    <div style={stylePages}>
-        <p>Contact Us Page</p>
-        <Link to="/">Go home</Link>
-    </div>
-);
-
-const HiringPage = () => (
-    <div style={stylePages}>
-        <p>We are Hiring Page</p>
-        <Link to="/">Go home</Link>
-    </div>
-);
 
 const TermsOfService = () => (
     <div style={stylePages}>
@@ -88,18 +63,18 @@ return(
     <BrowserRouter>
         <div> 
             <Header />
-            <Switch>
-                <Route path="/" component={HomePage} exact={true} />
-                <Route path="/about" component={AboutUs} />
-                <Route path="/blog" component={BlogPage} />
-                <Route path="/hiring" component={HiringPage} />
-                <Route path="/terms" component={TermsOfService} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/program" component={ProgramHubgets} />
-                <Route path="/features" component={Features} />
-                <Route path="/status" component={CurrentStatus} />
-                <Route component={NotFoundPage} />
-            </Switch>
+            <Routes>
+                <Route path="/" element={<Home/>} exact={true} />
+                <Route path="/about" element={ <About/> } />
+                <Route path="/blog" element={<Blog/>} />
+                <Route path="/hiring" element={<Hiring/>} />
+                <Route path="/terms" element={ <TermsOfService/> } />
+                <Route path="/contact" element={ <Contact/> } />
+                {/* <Route path="/program" element={ProgramHubgets} />
+                <Route path="/features" element={Features} />
+                <Route path="/status" element={CurrentStatus} /> */}
+                <Route element={NoPage} />
+            </Routes>
             <Footer />
         </div>
     </BrowserRouter>
