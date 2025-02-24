@@ -5,11 +5,19 @@ import errorImg from '../assets/icon-warning.png';
 
 
 export default class RegisterUser extends React.Component {
-    state ={
-        fields: {},
-        errors: {},
-       
+  constructor(props) {
+    super(props);
+    this.state = {
+      fields: {
+        name: '',
+        lastName: '',
+        company: '',
+        email: ''
+      },
+      errors: {},
     };
+  }
+
 
     handleValidation = () =>{
         let fields = this.state.fields;
@@ -58,6 +66,13 @@ export default class RegisterUser extends React.Component {
         this.setState({fields});
       }
 
+
+      // handleChange = (event) => {
+      //   const name = event.target.name;
+      //   const value = event.target.value;
+      //   setInputs(values => ({...values, [name]: value}))
+      // }
+
   
     render() {
 
@@ -66,6 +81,7 @@ export default class RegisterUser extends React.Component {
         
 
         return (
+        
             <div className="center-span">
                 <span id="register-img">
                         <img src={register} />
@@ -74,39 +90,52 @@ export default class RegisterUser extends React.Component {
                     <form className="wrapper" onSubmit= {this.contactSubmit.bind(this)}>
                             <div className="wrapper__row">
                                 <div className="wrapper__col-5">
-                                    <label htmlFor="name">First name</label>
-                                    <input ref="name" type="text" size="30" 
-                                    onChange={this.handleChange.bind(this, "name")} 
-                                    value={this.state.fields["name"]}
-                                    className={classes}
-                                    ></input>                                
+                                    <label>First name</label>
+                                    <input 
+                                      type="text" 
+                                      name="name" 
+                                      size="30" 
+                                      value={this.state.fields["name"] || ""} 
+                                      className={classes}
+                                      onChange={this.handleChange.bind(this, "name")}
+                                    />
+                                   
                                 </div>
-                                <div className="wrapper__col-5">    
-                                    <label htmlFor="lastName" >Last name</label>
-                                    <input refs="lastName" type="text" sise="30"
+                                 <div className="wrapper__col-5">    
+                                    <label >Last name</label>
+                                    <input 
+                                    name="lastName" 
+                                    type="text" 
+                                    sise="30"
                                     onChange={this.handleChange.bind(this, "lastName")} 
-                                    value={this.state.fields["lastName"]}
+                                    value={this.state.fields["lastName"] || ""}
                                     className={classes}
                                     ></input>
                                 </div>                        
                             </div>                    
                             <div className="wrapper__row">
                                 <div className="wrapper__col-12">
-                                    <label htmlFor="company">Company</label>
-                                    <input refs="company" type="text" size="30"
-                                    onChange={this.handleChange.bind(this, "company")}
-                                    value={this.state.fields["company"]}
-                                    className={classes}
+                                    <label>Company</label>
+                                    <input 
+                                     type="text" 
+                                     size="30"
+                                     name="company"
+                                     onChange={this.handleChange.bind(this, "company")}
+                                     value={this.state.fields["company"]}
+                                     className={classes}
                                     />
                                  </div>
                             </div>             
                             <div className="wrapper__row">
                                 <div className="wrapper__col-12">
-                                    <label htmlFor="email">E-mail address</label>
-                                    <input refs="email" type="text" size="30"
-                                    onChange={this.handleChange.bind(this, "email")} 
-                                    value={this.state.fields["email"]}
-                                    className={classes}  src={errorImg}                              
+                                    <label >E-mail address</label>
+                                    <input 
+                                     type="text"
+                                     size="30"
+                                     name="email"
+                                     onChange={this.handleChange.bind(this, "email")} 
+                                     value={this.state.fields["email"]}
+                                     className={classes}  src={errorImg}                              
                                     />                                                         
                                 </div>
                             </div> 
@@ -120,8 +149,8 @@ export default class RegisterUser extends React.Component {
                                             <span id="error" className={classes}>{this.state.errors["email"]}</span> 
                                         )
                                     }
-                                </div>                                                        
-                            </div>
+                                </div>                                                       
+                            </div> 
                     </form>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import RegisterUser from './RegisterUser';
 import FacilityUser from './FacilitiesUser';
-import MainHeader from './MainHeader';
+import MainTop from './MainTop';
 
 
-const HomePage = () => (
+const Home = () => (
     <div>
-        <MainHeader />
+        <MainTop />
         <section className="flex__section">
             <div className="content-container">
                 <div className="flex__section--content">                    
@@ -18,4 +18,4 @@ const HomePage = () => (
     </div>
 );
 
-export default HomePage;
+export default Home;
