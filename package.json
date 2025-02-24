@@ -1,8 +1,9 @@
 {
-  "name": "hubgets",
+  "name": "hubgets-test",
   "version": "1.0.0",
+  "homepage": "https://harvajoy.github.io/form-validation/",
   "main": "index.js",
-  "author": "Joyce Iftime",
+  "author": "Joyce Harvatovici",
   "license": "MIT",
   "babel": {
     "presets": [
@@ -11,6 +12,8 @@
     ]
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "server": "live-server public/",
     "build": "webpack",
     "dev-server": "webpack-dev-server"
@@ -40,6 +43,7 @@
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.3.0",
     "webpack-cli": "^6.0.1"
   }
 }
