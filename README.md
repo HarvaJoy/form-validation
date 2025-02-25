@@ -1,4 +1,4 @@
-# Simple Form Validation
+# Simple React Form Validation
 
 npm install
 
@@ -7,12 +7,12 @@ npm run dev-server
 
 ## Description 
 
-This is a simple project of form validation 
+This is a simple project using the React to show a simple way to use a form validation 
 
 
 ## Features 
 
-- Instructions for beginners. 
+- Simple form using React. 
 
 - Easy-to-follow examples.  
 
