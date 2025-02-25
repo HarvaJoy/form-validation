@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 import NoPage from '../components/NotPage';
 
 
-const AppRouter = () => {
+const Router = () => {
 
 const stylePages = {
     maxWidth: '60rem',
@@ -73,11 +73,11 @@ return(
                 {/* <Route path="/program" element={ProgramHubgets} />
                 <Route path="/features" element={Features} />
                 <Route path="/status" element={CurrentStatus} /> */}
-                <Route element={NoPage} />
+                <Route path="*" element={ <NoPage/> } />
             </Routes>
             <Footer />
         </div>
     </BrowserRouter>
 )};
 
-export default AppRouter;
+export default Router;

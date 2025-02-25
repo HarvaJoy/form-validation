@@ -1,7 +1,7 @@
 // install -> import -> use
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from './routers/AppRouter'
+import Router from './routers/Router'
 import 'normalize.css/normalize.css'
 import './sass/styles.scss';
 import {StrictMode} from 'react';
@@ -12,7 +12,7 @@ const root = createRoot(rootElement);
 
 root.render(
     <StrictMode>
-        <AppRouter/>
+        <Router basename="/form-validation"/>
     </StrictMode>,
   );
 

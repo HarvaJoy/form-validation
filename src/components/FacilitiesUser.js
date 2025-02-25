@@ -25,8 +25,8 @@ const FacilityUser = () => (
             <article className="help">
                     <img src={iconHelp} alt="Help" />
                     <div>                
-                        <p>+1 845 894 123</p>
-                        <Link to="/company/contact"> help@hubgets.com</Link>
+                        <p>+1 000 000 000</p>
+                        <Link to="/company/contact"> help@dummy.com</Link>
                     </div>              
             </article>                  
         </div>

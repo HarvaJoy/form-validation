@@ -1,7 +1,6 @@
 import React from 'react';
 import  { Link } from 'react-router-dom';
 
-import logo from '../assets/logo-hubgets.png';
 const stylePages = {
     maxWidth: '60rem',
 
