@@ -1,7 +1,7 @@
 {
   "name": "hubgets-test",
   "version": "1.0.0",
-  "homepage": "https://harvajoy.github.io/form-validation",
+  "homepage": "https://harvajoy.github.io/form-validation/",
   "main": "index.js",
   "author": "Joyce Harvatovici",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "deploy": "gh-pages -d build",
     "server": "live-server build",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "@babel/preset-react": "^7.26.3",

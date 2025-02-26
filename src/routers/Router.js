@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes, Link  } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter, Route, Routes, Link  } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Home from "../components/Home";
@@ -29,19 +29,18 @@ const AppRouter = () => {
  
 return(
 
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
         <div> 
-            <p>{basename}</p>
             <Header />
-            <Routes>
-                <Route path={basename} element={<Home/>} exact={true} />
-                <Route path="/about" element={ <About/> } />
-                <Route path="/blog" element={<Blog/>} />
-                <Route path="/hiring" element={<Hiring/>} />
-                <Route path="/terms" element={ <TermsOfService/> } />
-                <Route path="/contact" element={ <Contact/> } />
-                <Route path="*" element={ <NoPage/> } />
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Home/>} exact={true} />
+                    <Route path="/about" element={ <About/> } />
+                    <Route path="/blog" element={<Blog/>} />
+                    <Route path="/hiring" element={<Hiring/>} />
+                    <Route path="/terms" element={ <TermsOfService/> } />
+                    <Route path="/contact" element={ <Contact/> } />
+                    <Route path="*" element={ <NoPage/> } />
+                </Routes>
             <Footer />
         </div>
     </BrowserRouter>
