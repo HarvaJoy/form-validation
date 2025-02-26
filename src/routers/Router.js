@@ -14,23 +14,23 @@ import { getBaseUrlPath } from "./url.util";
 
 const AppRouter = () => {
     const basename = getBaseUrlPath();
-    console.log(basename)
-const stylePages = {
-    maxWidth: '60rem',
-    margin: '0 auto',
-    padding: '3rem 0 0 0',
-    padding: '0 $m-size',
-    height: '50rem',
-    fontSize: '2em',
-    textAlign:'center',
-    fontWeight: 500,
-}  
+
+    const stylePages = {
+        maxWidth: '60rem',
+        margin: '0 auto',
+        padding: '3rem 0 0 0',
+        padding: '0 $m-size',
+        height: '50rem',
+        fontSize: '2em',
+        textAlign:'center',
+        fontWeight: 500,
+    }  
  
 
 
 return(
 
-    <BrowserRouter basename={'/'}>
+    <BrowserRouter basename={basename}>
         <div> 
             <Header />
             <Routes>
