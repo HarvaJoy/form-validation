@@ -13,6 +13,7 @@ import { getBaseUrlPath } from "./url.util";
 
 
 const AppRouter = () => {
+
     const basename = getBaseUrlPath();
 
     const stylePages = {
@@ -26,8 +27,6 @@ const AppRouter = () => {
         fontWeight: 500,
     }  
  
-
-
 return(
 
     <BrowserRouter basename={basename}>

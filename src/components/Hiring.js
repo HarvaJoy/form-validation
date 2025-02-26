@@ -11,12 +11,19 @@ const stylePages = {
     fontSize: '2em',
     textAlign:'center',
     fontWeight: 500,
-}  
+}
+
+const StyleLink = {
+    fontSize: '1em',
+    textAlign:'center',
+    fontWeight: 600,
+    color: '#2e5a6d',
+}
  
 const Hiring = () => (
     <div style={stylePages}>
     <p>Hiring Page</p>
-    <Link to="/">Go home</Link>
+    <Link to="/" style={StyleLink}>Go home</Link>
 </div>
 );
 
