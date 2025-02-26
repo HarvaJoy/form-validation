@@ -3,18 +3,20 @@ import { BrowserRouter, Route, Routes, Link  } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Home from "../components/Home";
-import About from "../components/about";
-import Blog from "../components/blog";
+import About from "../components/About";
+import Blog from "../components/Blog";
 import Hiring from "../components/Hiring";
 import Contact from "../components/Contact";
 import NoPage from '../components/NotPage';
+import TermsOfService from '../components/TermsOfService'
+import { getBaseUrlPath } from "./url.util";
 
 
-const Router = () => {
-
+const AppRouter = () => {
+    const basename = getBaseUrlPath();
+    console.log(basename)
 const stylePages = {
     maxWidth: '60rem',
-
     margin: '0 auto',
     padding: '3rem 0 0 0',
     padding: '0 $m-size',
@@ -26,41 +28,9 @@ const stylePages = {
  
 
 
-const TermsOfService = () => (
-    <div style={stylePages}>
-        <p>Terms of Service Page</p>
-        <Link to="/">Go home</Link>
-    </div>
-);
-
-//Pages Our hubgets
-const CurrentStatus = () => (
-
-        <div style={stylePages}>
-            <p>This is from my component Current Status Page</p>
-            <Link to="/">Go home</Link>
-        </div>        
- );    
- 
- const Features = () => (
-    <div style={stylePages}>
-        <p>Features Page</p>
-        <Link to="/">Go home</Link>
-    </div>
-);
-
-const ProgramHubgets = () => (
-    <div style={stylePages}>
-        <p>Join The Program Page</p>
-        <Link to="/">Go home</Link>
-    </div>
-);
-
-
-
 return(
 
-    <BrowserRouter>
+    <BrowserRouter basename={'/'}>
         <div> 
             <Header />
             <Routes>
@@ -70,9 +40,6 @@ return(
                 <Route path="/hiring" element={<Hiring/>} />
                 <Route path="/terms" element={ <TermsOfService/> } />
                 <Route path="/contact" element={ <Contact/> } />
-                {/* <Route path="/program" element={ProgramHubgets} />
-                <Route path="/features" element={Features} />
-                <Route path="/status" element={CurrentStatus} /> */}
                 <Route path="*" element={ <NoPage/> } />
             </Routes>
             <Footer />
@@ -80,4 +47,4 @@ return(
     </BrowserRouter>
 )};
 
-export default Router;
+export default AppRouter;

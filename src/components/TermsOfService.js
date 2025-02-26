@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import  { Link } from 'react-router-dom';
 
 const stylePages = {
     maxWidth: '60rem',
@@ -12,13 +12,12 @@ const stylePages = {
     textAlign:'center',
     fontWeight: 500,
 }  
-const NoPage = () => (
-
-        <div style={stylePages}>
-            <p>404! Not Found</p>
-            <Link to="/">Go home</Link>
-        </div>
-        
+ 
+const TermsOfService = () => (
+    <div style={stylePages}>
+        <p>Terms of Service Page</p>
+        <Link to="/">Go home</Link>
+    </div>
 );
 
-export default NoPage;
+export default TermsOfService;
