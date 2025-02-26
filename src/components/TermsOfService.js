@@ -23,7 +23,7 @@ const StyleLink = {
 const TermsOfService = () => (
     <div style={stylePages}>
         <p>Terms of Service Page</p>
-        <Link to="/" style={StyleLink}>Go home</Link>
+        <Link to="/" >Go home</Link>
     </div>
 );
 

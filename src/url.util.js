@@ -20,7 +20,7 @@ export const getBaseUrlPath = () => {
   if (startOfAppBase !== -1) {
     base = currentPath.substr(0, startOfAppBase);
   }
-
+console.log(base)
   base = urlJoin(base, APP_ROOT_URL);
 
   return base;

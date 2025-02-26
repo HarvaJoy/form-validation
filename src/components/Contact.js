@@ -22,7 +22,7 @@ const StyleLink = {
 const Contact = () => (
     <div style={stylePages}>
            <p>Contact Us Page</p>
-           <Link to="/" style={StyleLink}>Go home</Link>
+           <Link to="/">Go home</Link>
        </div>
 );
 

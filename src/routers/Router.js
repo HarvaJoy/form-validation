@@ -9,7 +9,7 @@ import Hiring from "../components/Hiring";
 import Contact from "../components/Contact";
 import NoPage from '../components/NotPage';
 import TermsOfService from '../components/TermsOfService'
-import { getBaseUrlPath } from "./url.util";
+import { getBaseUrlPath } from "../url.util";
 
 
 const AppRouter = () => {
@@ -31,9 +31,10 @@ return(
 
     <BrowserRouter basename={basename}>
         <div> 
+            <p>{basename}</p>
             <Header />
             <Routes>
-                <Route path="/" element={<Home/>} exact={true} />
+                <Route path={basename} element={<Home/>} exact={true} />
                 <Route path="/about" element={ <About/> } />
                 <Route path="/blog" element={<Blog/>} />
                 <Route path="/hiring" element={<Hiring/>} />
