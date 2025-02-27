@@ -1,15 +1,6 @@
 import urlJoin from "url-join";
 
-
-var basename = " "
-  if (process.env.NODE_ENV == 'production') {
-      basename = "/form-validation"
-  }
-  else if (process.env.NODE_ENV == 'development')
-      basename = "/"
-    
-
-export const APP_ROOT_URL = basename;
+export const APP_ROOT_URL = "/form-validation";
 
 export const getBaseUrlPath = () => {
   const currentPath = document.location.pathname || APP_ROOT_URL;

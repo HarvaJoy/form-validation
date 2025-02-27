@@ -5,8 +5,11 @@ const path = require('path');
 module.exports = {
     entry: './src/app.js',
     output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'index.js'
+        path: path.resolve(__dirname, './build'),
+        filename: 'index.js',
+        /*Switch the following 2 lines to run the project localy*/
+        publicPath: '/build/'
+
     },
     module: {
         rules: [{
@@ -31,13 +34,23 @@ module.exports = {
         }]
     },
     mode: 'development',
-    devtool: "inline-source-map",
+    devtool: 'eval-source-map',
     devServer: {
+        // contentBase: path.resolve(__dirname, 'build'),
+        open: true,
+        port: 9000,
+        hot: true,
+        historyApiFallback: true,
+        // output: {
+        //     filename: 'index.js',
+        //     publicPath: 'http://localhost:8081/form-validation/'
         static: {
             directory: path.join(__dirname, "build")
+        // // },
+        // // histo
+        // // open: ['/form-validation'],
+
         }
-        // contentBase: path.join(__dirname, 'public'),
-        // historyApiFallback: true
     }
     
-};
+}

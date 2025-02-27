@@ -23,7 +23,7 @@ const StyleLink = {
 const About = () => (
     <div style={stylePages}>
         <p> This is from my component About Us Page</p>
-        <Link to="/" style={StyleLink} >Go home</Link>
+        <Link to="/" style={StyleLink}>Go home</Link>
     </div>
 );
 
